@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 
+	++a 전위증감: 먼저 나를 증가시킨 후 다른 피연산자와 연산한다.
+	a++ 후위증감: 먼저 다른 피연산자와 연산하고나서 나를 증가시킨다.
+
+	--aa, aa--;
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>증감연산자</title>
+		<script>
+			let a,b,c,d;
+			a=9; b=10;
+
+			document.write("<h3>증감연산자</h3>");
+			document.write("a=0, b=10 <hr>");
+			
+			c = ++a + b;	// 9>10 + b 10 = 20
+			document.write("전위증감: "+c+"<br>");
+
+			c = a++ + b;	// 10 + b 10 = 20
+			document.write("후위증감: "+c+"<br>");
+			document.write("연산 후 a: " + a)
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

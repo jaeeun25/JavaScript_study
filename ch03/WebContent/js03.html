@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			span{font-size: 40px;}
+		</style>
+		<script>
+			// 요일(월~일)을 입력받는다.
+			// 	switch문으로
+			// 	오늘은 월요일입니다.
+			// 이때 요일의 글자만 크기를 40px, 색상은 빨주노초파남보
+			// 그 외 입력은 "요일을 잘못 입력하였습니다."로 출력
+
+			let str = prompt("요일을 입력하세요.(월~일)");
+
+			switch(str){
+				case'월':
+					document.write("<h3>오늘은 <span style='color: red;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				case'화':
+				document.write("<h3>오늘은 <span style='color: orange;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				case'수':
+				document.write("<h3>오늘은 <span style='color: yellow;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				case'목':
+				document.write("<h3>오늘은 <span style='color: green;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				case'금':
+				document.write("<h3>오늘은 <span style='color: blue;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				case'토':
+				document.write("<h3>오늘은 <span style='color: navy;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				case'일':
+				document.write("<h3>오늘은 <span style='color: purple;'>" + str + "요일</span>입니다.</h3>");
+					break;
+				default:
+					document.write("요일을 잘못 입력하셨습니다.");
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

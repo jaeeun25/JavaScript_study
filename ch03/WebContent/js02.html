@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div{
+				background-color: skyblue;
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+				text-align: center;
+			}
+		</style>
+		<script>
+			// num1과 num2를 입력받는다.
+			// num1과 num2를 비교해서 큰 것을 max, 작은 것을 min으로 구한다.
+			// 그 결과를.. div영역 200*200 크기에 skyblue컬러로 하고 
+			// div를 화면 중간에 정렬시킨다.
+
+			let num1 = parseInt(prompt("num1 값을 입력하세요."));
+			let num2 = parseInt(prompt("num2 값을 입력하세요."));
+			
+			if(num1 > num2) {max = num1; min = num2;}
+			else {max = num2; min = num1;}
+
+			document.write("<div>")
+			document.write("<h3>max: " + max + "<br>min: " + min +"</h3>");
+			document.write("</div>")
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

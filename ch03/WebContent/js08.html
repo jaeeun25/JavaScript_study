@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>while문 학습</title>
+		<style>
+			body{background-color: black; color:magenta;}
+			h3{margin-top: 50px;}
+			.dan{width: max-content;}
+			.dan>a{color:magenta; text-decoration: none;}
+			.dan:hover, .dan>a:hover{color:white;}
+		</style>
+		<script>
+			document.write("<ul>");
+				document.write("<li class='dan'><a href='#1'>1단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#2'>2단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#3'>3단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#4'>4단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#5'>5단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#6'>6단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#7'>7단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#8'>8단 구구단</a></li>");
+				document.write("<li class='dan'><a href='#9'>9단 구구단</a></li>");
+			document.write("</ul>");
+
+			let dan = parseInt(prompt("몇 단까지 출력할까요?(1~9)"));
+			let i = 1;
+			while(i <= dan){
+				document.write("<h3><a name='"+i+"'>"+i+"단</a></h3>");
+				document.write("<hr>");
+				for(let j=1; j<10; j++){
+					document.write("<p>"+i+" * "+j+" = "+(i*j)+"</p>");
+				}
+				i++;
+			}
+				
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- 
+	//		: 한줄 주석		- ctrl+/
+	/* */	: 여러줄 주석	- 범위잡고 shift+ctrl+/
+
+	- 코드에 대한 설명, 오류 추적 시 프로그램 막기용으로 활용한다.
+
+	- 변수
+		스크립트는 변수 선언과 함께 객체가 생성된다. (객체가 반이다)
+			var x = "hello";
+				(주소값)
+		var과 let이 있다.
+	- 상수
+		변해서는 안되는 값, 변하지 않는 값..
+		var, const
+
+		>> int x=27; float y=2.125; String s="자바";	// 자바
+		>> let x=27; let y=2.125; let s="자바스크립트";	// 자바스크립트
+
+	- var : 중복선언이 가능하다.
+	- let/const: 중복선언이 불가능하다.
+	- const활용: 날짜포맷, 컬러 지정 등에 활용
+				2023.01.10, 2023-01-10, 2023/01/10	>> 날짜 형식 제각각
+				>> const DATE_FORMAT = "yyyy.MM.dd";
+				#ff00 >> const COLOR_RED = "#ff0000";
+	
+	- 식별자(변수, 상수, 함수명, 객체명)
+		. 대소문자 구분
+		. 식별자의 시작은 숫자로 시작할 수 없다.
+		. 예약어는 사용불가(return, int, float, long 등)
+		. 네이밍컨벤션
+			- 카멜표기법 : userName
+			- 스네이크표기법 : user_name
+			- 파스칼표기법: UserName
+			- 헝가리언표기법 : strUserName
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+
+			/* var 6v = "오류"; */
+
+			var name="홍길동";
+			var name="강감찬";
+			document.write(name+"<br>");
+
+			let age = 10;
+			/* let age= 20;					// 오류(let 중복 선언 불가) */
+			document.write(age+"<br>");
+
+			address = "서울 마포구";				// 선언 없이 사용 가능(전역변수)
+			document.write(address+"<br>");
+
+			Address = "서울 영등포구";
+			document.write(Address);		// 대소문자 구분
+
+			const x = 5;
+			const y = 5;
+			const z = x+y;
+
+			/* x = 10;						// const로 선언된 것은 값을 변경할 수 없다. */
+			/* const x = 7; */
+
+			const COLOR_RED = "#ff00ff";
+			document.write("<h3 style='color:"+COLOR_RED+"'>컬러 상수 적용</h3>");
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

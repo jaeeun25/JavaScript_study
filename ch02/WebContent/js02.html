@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			h3{color: red;}
+		</style>
+		<!-- 
+			두 수를 입력받는다.
+
+			<h3>사칙 연산의 결과값을 출력한다.</h3> - 결과값 글자색 빨강
+			(+,-,*,/,%)					- 소숫점 2자리까지만 출력
+		-->
+		<script>
+			var x = parseInt(prompt("x값을 입력하세요."));
+			var y = parseInt(prompt("y값을 입력하세요."));
+
+			document.write("<h3>x + y = " + (x+y) +"</h3>")
+			document.write("<h3>x - y = " + (x-y) +"</h3>")
+			document.write("<h3>x * y = " + (x*y) +"</h3>")
+			document.write("<h3>x / y = " + (x/y).toFixed(2) +"</h3>")
+			document.write("<h3>x % y = " + (x%y) +"</h3>")
+		</script>
+		
+	</head>
+	<body>
+
+	</body>
+</html>

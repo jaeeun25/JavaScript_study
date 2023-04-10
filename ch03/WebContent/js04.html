@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			img{
+				width: 300px;
+				height: auto;
+			}
+		</style>
+		<script>
+			// 과일을 선택합니다(귤/복숭아/체리)
+			// switch문으로 과일의 가격(price)를 결정합니다.
+			// <h4>선택하신 OOO의 가격은 XXX입니다.</h4>
+
+			// div안에 
+			// 각 과일에 맞는 이미지 출력
+			let fruit = prompt("과일을 선택합니다.(귤/복숭아/체리)");
+
+			switch(fruit){
+				case'귤':
+					document.write("<h4>선택하신 "+fruit+"의 가격은 1000원입니다.</h4>");
+					document.write("<img src='./img/tangerines.jpg'>");
+					break;
+				case'복숭아':
+					document.write("<h4>선택하신 "+fruit+"의 가격은 1500원입니다.</h4>");
+					document.write("<img src='./img/peach.jpg'>");
+					break;
+				case'체리':
+					document.write("<h4>선택하신 "+fruit+"의 가격은 2000원입니다.</h4>");
+					document.write("<img src='./img/cherry.jpg'>");
+					break;
+				default:
+					document.write("선택지에 있는 과일을 골라주세요.");
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
