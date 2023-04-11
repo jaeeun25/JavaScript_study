@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>같은 문자 출력</title>
+		<style>
+			span{
+				font-size: 3em;
+				font-weight: bolder;
+				color: magenta;
+			}
+		</style>
+		<script>
+			let f = function(str, cnt){
+				for(let i=0; i<cnt; i++){
+					document.write("<span>"+str+"</span>");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>입력한 수만큼 문자 출력</h3>
+		<hr>
+		<script>
+			let str = prompt("문자 입력");
+			let cnt = parseInt(prompt("출력할 갯수 입력"));
+
+			f(str, cnt);
+		</script>
+	</body>
+</html>

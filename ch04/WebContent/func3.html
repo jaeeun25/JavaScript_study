@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			body{background-color: black;}
+			h1{
+				color: magenta; 
+				text-align: center; 
+				text-shadow: 0 0 10px white, 0 0 8px white, 0 0 5px white, 0 0 3px white, 0 0 1px white;
+				transition-property: color, text-shadow;
+				transition-duration: 2s;
+				transition-timing-function: linear;
+			}
+			h1:hover{
+				color:white;
+				text-shadow: 0 0 10px magenta, 0 0 8px magenta, 0 0 5px magenta, 0 0 3px magenta, 0 0 1px magenta;
+			}
+		</style>
+		<script>
+			// 사칙 연산 후 결과값을 리턴해주는 함수를 구현 - 함수 표현식
+			// a, b의 값은  입력 받는다.
+			// add(a,b), minus(a,b), muliple(a,b), divide(a,b)
+			// calculator(n1, n2, operator){operator에 따라 함수 실행}
+			// body에 출력 폼을 만들어서 호출해본다.
+
+			let add = function(a,b){
+				return a+b;
+			}
+			
+			let minus = function(a,b){
+				return a-b;
+			}
+
+			let muliple = function(a,b){
+				return a*b;
+			}
+			let divide = function(a,b){
+				return a/b;
+			}
+			
+			let calculator = function(n1, n2, op){
+				switch(op){
+					case '+': 
+						document.write("<h1>"+n1+op+n2+"="+add(n1, n2)+"</h1>")
+						break;
+					case '-': 
+						document.write("<h1>"+n1+op+n2+"="+minus(n1, n2)+"</h1>")
+						break;
+					case '*': 
+						document.write("<h1>"+n1+op+n2+"="+muliple(n1, n2)+"</h1>")
+						break;
+					case '/': 
+						document.write("<h1>"+n1+op+n2+"="+divide(n1, n2)+"</h1>")
+						break;
+					default: document.write("<h1>잘못입력하셨습니다.</h1>")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>입력받은 연산을 계산합니다.</h3>
+		<script>
+			let num1 = parseInt(prompt("첫번째 수 입력"));
+			let num2 = parseInt(prompt("두번째 수 입력"));
+			let operator = prompt("연산자 입력(+,-,*,/)");
+
+			calculator(num1, num2, operator);
+		</script>
+	</body>
+</html>

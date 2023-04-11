@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>큰 자리수와 낮은 자리수 같은지 비교</title>
+		<script>
+			let f = n => {
+				if(n[0] == n[n.length-1]){
+					document.write(`${n}: 같음`);
+				}
+				else{
+					document.write(`${n}: 다름`);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>큰 자리수와 낮은 자리수 같은지 비교</h3>
+		<hr>
+		<script>
+			let n = prompt("수 입력");
+
+			f(n);
+		</script>
+	</body>
+</html>

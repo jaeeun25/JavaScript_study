@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+
+			document.write(adder(30,40));	// 함수 정의보다 위에있는데 호출 가능 -> 호이스팅되어서 호출 가능한 것
+			document.write("<br>");
+
+			function adder(a, b){
+				let sum;
+				sum = a+b;
+				return sum;
+			}
+
+			document.write(adder(10,20));
+		</script>
+	</head>
+	<body>
+		<script>
+			let num1 = parseInt(prompt("첫번째 수:"));
+			let num2 = parseInt(prompt("두번째 수:"));
+
+			//document.write("<h3>앞에서 호출 "+f(num1, num2)+"</h3>");		// 함수 표현식은 호이스팅 안됨!
+
+			// 함수표현식
+			let f = function(a, b){
+				let sum = 0;
+				sum = a+b;
+				return sum;
+			}
+
+			document.write("<h3>뒤에서 호출 "+f(num1, num2)+"</h3>");
+				
+		</script>
+	</body>
+</html>

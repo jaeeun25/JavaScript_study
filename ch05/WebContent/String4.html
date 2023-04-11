@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 주민번호를 입력받아서 성별을 구분하여 출력한다.
+			// slice()활용
+
+			let gender =  function() {
+
+				while(true){
+					let n = prompt("주민번호를 입력하세요","-(하이픈)포함");
+					n = n.trim();
+					let start = n.slice(0, 6);
+					let end = n.slice(7, 14);
+
+					if(n.length!=14 || n[6]!="-" || isNaN(start) || isNaN(end)){
+						document.write("<p>잘못입력하셨습니다.</p>");
+						return;
+					}
+
+					let s = n.slice(0, 1);
+
+					if(s == "1" || s == "3"){
+						document.write("<p>남자</p>");
+						break;
+					}else if(s == "2" || s == "4"){
+						document.write("<p>여자</p>");
+						break;
+					}else{
+						alert("잘못입력하셨습니다. 다시 입력해주세요.");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>주민번호로 성별 구분하기 - slice() 활용</h3>
+		<hr>
+		<script>
+			gender();
+		</script>
+	</body>
+</html>

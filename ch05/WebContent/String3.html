@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 비밀번호 생성 규칙이 8자리에서 16자리 이하와 같은 생성규칙이 존재한다.
+			// 비밀번호가 제대로 입력되었는지 체크한다.
+			
+			// length를 활용해서 길이를 체크한다, typeof() - 데이터 타입 확인
+
+			let check = n => {
+				let size = n.length;
+				if(size > 7 && size < 17){
+					document.write("<p>"+size+"자리로 비밀번호로 적합합니다.</p>");
+				}
+				else{
+					
+					document.write("<p>자릿수가 비밀번호로 적합하지 않습니다.</p>");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>비밀번호 생성규칙 지켰는지 체크하기</h3>
+		<hr>
+		<script>
+			let number = prompt("비밀번호를 입력하세요.");
+
+			check(number);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>document.write()</title>
+		<style>
+			table{text-align: center;;}
+			td, th{
+				width: 50px; height: 80px;
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+			}
+			th:first-child{
+				border-left: 1px solid black;
+			}
+			tr:last-child td, tr:last-child th{
+				border-bottom: 1px solid black;
+			}
+		</style>
+		<script>
+			let f = n => {
+				document.write("<th>n</th>");
+				for(let i=0; i<=n; i++){
+					document.write("<td>"+i+"</td>");
+				}
+				document.write("</tr><tr><th>n<sup>2</sup></th>");
+				for(let i=0; i<=n; i++){
+					document.write("<td>"+i*i+"</td>");
+				}	
+				document.write("</tr>");
+			}
+		</script>
+	</head>
+	<body>
+		<h3>document.write()로 표만들기</h3>
+		<hr>
+		<script>
+			let n = parseInt(prompt("n값 입력"));
+			document.write("<table cellpadding='0px' cellspacing='0px'>");
+			f(n);
+			document.write("</table>");	
+		</script>
+	</body>
+</html>

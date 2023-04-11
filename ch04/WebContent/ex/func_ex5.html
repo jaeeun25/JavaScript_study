@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>문자 점점 커지게 출력</title>
+		<script>
+			let f = str => {
+				for(let i=6; i>=1; i--){
+					document.write("<h"+i+">"+str+"</h"+i+">");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script>
+			f("Welcome");
+			document.write("<hr>");
+			f("수요일 자바스크립트");
+		</script>
+	</body>
+</html>

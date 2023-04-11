@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			table{
+				text-align: center;
+				margin: 0 auto;
+				
+				
+			}
+			caption{
+				font-size: 24px;
+				font-weight: bolder;
+			}
+			th, td{width: 100px; height: 50px;border-bottom:1px solid black; border-right:1px solid black;}
+			th{
+				background-color: lightgray;
+			}
+			td{
+				background-color: lightgoldenrodyellow;	
+			}
+			.last td{
+				background-color: lightsteelblue;
+			}
+			tr :nth-child(1){
+				border-left: 1px solid black;
+			}
+			table:nth-child(2){
+				border-top: 1px solid black;
+			}
+
+		</style>
+		<script>
+			let insert = function(){
+				let name = prompt("이름 입력");
+				let kor = parseInt(prompt("국어 점수 입력"));
+				let math = parseInt(prompt("수학 점수 입력"));
+				let eng = parseInt(prompt("영어 점수 입력"));
+				sum.kor += kor;
+				sum.math += math;
+				sum.eng += eng;
+				document.write("<tr><td>"+name+"</td><td>"+kor+"</td><td>"+math+"</td><td>"+eng+"</td></tr>");
+			}
+		</script>
+	</head>
+	<body>
+		<script>
+			let flag = "y";
+			let sum = {
+				kor : 0,
+				math : 0,
+				eng : 0
+			}; 
+			
+			document.write("<table cellpadding='0px' cellspacing='0px'>");
+				document.write("<caption>성 적 표</caption>");
+				document.write("<tr><th>이름</th><th>국어</th><th>수학</th><th>영어</th></tr>");
+				while(flag != "n"){
+					insert();			
+					
+					flag = prompt("더 입력하시겠습니까?(y/n)");
+				}
+				document.write("<tr class='last'><td>과목총점</td><td>"+sum.kor+"</td><td>"+sum.math+"</td><td>"+sum.eng+"</td></tr>");
+				document.write("<tr class='last'><td>전체총점</td><td>"+(sum.kor+sum.math+sum.eng)+"</td><td>전체평균</td><td>"+((sum.kor+sum.math+sum.eng)/3).toFixed(2)+"</td></tr>");
+			document.write("</table>");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 전화번호를 입력받는다. -(하이픈)이 없어야한다.
+			// 입력받은 전화번호에 -(하이픈)이 있는지 체크한다.
+			// indexOf()활용
+			let phone = function(){
+				while(true){
+					let phone = prompt("전화번호를 입력하세요.(-제외)","01012345678");
+
+					if(phone.indexOf("-") == -1 && phone.length == 11){
+						document.write("<p>전화번호: "+phone+"</p>");
+						break;
+					}
+					else{
+						alert("잘못입력하셨습니다. 다시 입력해주세요.");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>전화번호 입력받기</h3>
+		<hr>
+		<script>
+			phone();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	for ~ in
+	for ~ of
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script>
+			// 객체 생성
+			let person = {
+				first_name : "홍",
+				last_name : "길동",
+				age : 25
+			};
+
+			// 개별출력
+			document.write("<h3>성: "+person["first_name"]+"</h3>");
+			document.write("<h3>이름: "+person.last_name+"</h3>");
+			document.write("<h3>나이: "+person.age+"</h3>");
+
+			// 전체출력: for~in
+			for(const key in person){
+				document.write("<h3>"+key+":"+person[key]+"</h3>");
+			}
+
+			let fruits = ["귤", "체리", "딸기", "사과", "수박"];
+			// 전체출력: for~of
+			for(const fruit of fruits){
+				document.write("<h3>"+fruit+"</h3>");
+
+			}
+		</script>
+	</body>
+</html>

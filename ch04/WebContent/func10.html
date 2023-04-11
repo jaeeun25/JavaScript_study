@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- 
+	화살표 함수
+		. 함수 선언식
+		. 함수 표현식
+		+ 화살표 함수
+			(함수 선언식)
+			function hello(name){
+				return  "hello "+name;
+			}
+
+			(화살표 함수)
+			const hello = (name) => {
+				return "hello "+name;
+			}
+			* 실행문이 하나이면 {} 생략 가능
+				const hello = (name) => "hello "+name;	(return 생략되어있는 것)
+			
+			* 매개변수가 하나라면
+				const hello = name => "hello "+name;	(return 생략되어있는 것)
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 함수 선언식
+			function hello1(name){
+				return "<h3>Hello!"+name+"</h3>";
+			}
+			
+			// 함수 표현식
+			const hello2 = function(name){
+				return "<h3>Hello!"+name+"</h3>";
+			}
+			
+			// 화살표 함수
+			const hello3 = (name) => {
+				return "<h3>Hello!"+name+"</h3>";
+			}
+			const hello4 = name => {
+				return "<h3>Hello!"+name+"</h3>";
+			}
+			const hello5 = nema => "<h3>Hello!"+name+"</h3>";
+		</script>
+	</head>
+	<body>
+		<h3>화살표 함수 학습</h3>
+		<hr>
+		함수 선언식: <span id="a"></span><br>
+		함수 표현식: <span id="b"></span><br>
+		화살표 함수1: <span id="c"></span><br>
+		화살표 함수2: <span id="d"></span><br>
+		화살표 함수3: <span id="e"></span><br>
+		<script>
+			let name;
+			function f(){
+				name = prompt("이름을 입력하시오");
+				const span = document.getElementsByTagName('span');
+
+				for(let i=0; i<span.length; i++){
+					span[i].innerHTML = hello1(name);
+				}
+			}
+
+			f();
+			document.write(hello1(name));
+			document.write(hello2(name));
+			document.write(hello3(name));
+			document.write(hello4(name));
+			document.write(hello5(name));
+		</script>
+	</body>
+</html>
