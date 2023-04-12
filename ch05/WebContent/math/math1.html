@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 
+	Math
+		. 모두 static
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<style>
+			div{
+				display: inline-block;
+				position: relative;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				margin: 5px;
+				box-shadow: 5px 5px 3px gray;
+			}
+			div>p{
+				position: relative;
+				background-color: white;
+				width: 40px;
+				height: 30px;
+				text-align: center;
+				border-radius: 50%;
+				margin: 0 auto;
+				top: 10px;
+				font-weight: bolder;
+				padding: 9px 0 1px;
+
+			}
+			.ball0{background-color: lightcoral;}
+			.ball1{background-color: lightblue;}
+			.ball2{background-color: lightgreen;}
+			.ball3{background-color: lightsalmon;}
+			.ball4{background-color: lightseagreen;}
+			.ball5{background-color: lightslategrey;}
+			.ball6{background-color: lightgoldenrodyellow;}		
+		</style>
+		<script>
+			document.write("<p>"+Math.random()+"</p>");	
+			document.write("<p>"+Math.random()*10+"</p>");
+			document.write("<p>"+Math.random()*100+"</p>");
+			document.write("<p>"+Math.random()*1000+"</p>");
+			document.write("<p>"+Math.random()*10000+"</p>");
+
+			// 정수화
+			document.write("<p>"+Math.ceil(Math.random()*100)+"</p>");			// 소수값 올림
+			document.write("<p>"+Math.ceil(Math.random()*1000)+"</p>");
+			document.write("<p>"+Math.ceil(Math.random()*10000)+"</p>");
+			document.write("<p>"+Math.ceil(Math.random()*100000)+"</p>");
+
+			document.write("<p>"+(Math.floor(Math.random()*100)+1)+"</p>");		// 소수값 버림
+
+			document.write("<hr>");
+			// 구간 - 로또번호(1~46, 6개 랜덤 숫자) - 복권처럼 만들어서 출력할 것
+			let cnt = 0;
+			let arr = [];
+			
+			while(cnt < 7){
+				let number = (Math.floor(Math.random()*46)+1);
+				
+				if(arr.indexOf(number) == -1){	// 한번도 뽑힌적 없는 번호만 추가
+					arr.push(number);
+					cnt++;
+				}
+			}
+
+			arr.sort();
+
+			for(i=0; i<7; i++){
+				document.write("<div class='ball"+i+"'><p>"+arr[i]+"</p></div>");
+			}
+		</script>
+	</body>
+</html>

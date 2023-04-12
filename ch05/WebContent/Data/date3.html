@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function getIntevalDate(day){
+				// prompt()로 받은 이전 또는 이후 날짜를 가지고
+				// 새로운 날짜 객체를 생성한다.
+				// 일을 밀리초로 환산 : 24*60*60*1000
+				// return new Date(현재시간+받은시간) -> (now.getTime()+(일밀리초*day))
+				let now = new Date();
+
+
+				return new Date(now.getTime() + (24*60*60*1000*day));
+				
+				/* 위에 return 하나로 정리할수 있음 굳이 -, + 구분 필요없음. 애초에 * 뒤에 있어서 숫자로 자동 변환됨(-붙어도 음수값으로 구분)
+				if(day.charAt(0) == "-"){
+					return new Date(now.getTime() - (24*60*60*1000*(day.slice(1))));		// slice를 한 이유는 +, -를 제외하기 위함.
+				}
+				else if(day.charAt(0) == "+"){
+					return new Date(now.getTime() + (24*60*60*1000*(day.slice(1))));
+				}
+				*/	
+			}
+		</script>
+	</head>
+	<body>
+		<h3>몇일 전후의 날짜를 계산</h3>
+		<hr>
+		<script>
+			// prompt() 몇일 전(-) 후(+)의 날짜를 알고싶은가요?
+			// getIntevalDate()를 호출해서 새로운 날짜의 객체를 리턴 받아오고
+			// 년, 월, 일을 출력해준다.
+
+			let d = prompt("몇일 전(-) 후(+)의 날짜를 알고싶은가요?(-는 꼭 포함해주세요.)");
+			
+			let result = getIntevalDate(d);
+
+			let year = result.getFullYear();
+			let month = result.getMonth()+1;
+			let day = result.getDate();
+
+			document.write(year+"년"+month+"월"+day+"일");
+		</script>
+	</body>
+</html>

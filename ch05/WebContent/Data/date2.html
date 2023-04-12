@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 방문하는 시간(초)가 짝수이면 violet 색상, 홀수이면 lightskyblue 색상으로
+			// 배경색이 변경되도록 구현하시오
+			// document.body.style.backgroundColor="색상";
+
+			document.write("<h2>방문시간이 짝수/홀수인지에 따라 배경 색상 변경</h2>");
+			document.write("<hr>");
+
+			let d = new Date();
+
+			if(d.getSeconds() % 2 == 0){
+				document.write("<h3>방문시간: "+d.getSeconds()+"초</h3>");
+				document.body.style.backgroundColor="violet";
+			}
+			else{
+				document.write("<h3>방문시간: "+d.getSeconds()+"초</h3>");
+				document.body.style.backgroundColor="lightskyblue";
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

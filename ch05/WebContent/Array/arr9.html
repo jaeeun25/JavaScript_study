@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let fruits = [];
+
+			function f1(){
+				fruits.push(frm1['fruit'].value);
+				fruits.push(frm1['price'].value);
+				fruits.push(frm1['stock'].value);
+			}
+		
+			function f2(){
+				let len = fruits.length;
+				for(i=0; i<len; i++){
+					document.write(fruits.pop()+" ");
+				}
+			}
+
+			// 폼의 체크박스 값을 읽어서 배열에 저장하고 출력한다.
+			function f3(){
+				for(i=1; i<4; i++){
+					if(document.getElementById('fruit'+i).checked){
+						fruits.push(frm2['fruit'+i].value);
+					}
+				}
+			}
+			function f4(){
+				let len = fruits.length;
+
+				for(i=0; i<len; i++){
+					document.write(fruits.pop()+" ");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="frm1">
+			<table>
+				<tr><td>과일명</td><td><input type="text" name="fruit" value=""></td></tr>
+				<tr><td>가   격</td><td><input type="text" name="price" value=""></td></tr>
+				<tr><td>재고수량</td><td><input type="text" name="stock" value=""></td></tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" onclick="f1()">입력완료</button>
+						<button type="button" onclick="f2()">입력내용</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<hr>
+		<!-- frm2 -> check박스 사과, 배, 딸기 / button 입력완료,입력내용   + table로 작성 -->
+		<form name="frm2">
+			<table>
+				<tr><td>과일명</td></tr>
+				<tr><td><input type="checkbox" id="fruit1" value="사과">사과</td></tr>
+				<tr><td><input type="checkbox" id="fruit2" value="배">배</td></tr>
+				<tr><td><input type="checkbox" id="fruit3" value="딸기">딸기</td></tr>
+				<tr>
+					<td>
+						<button type="button" onclick="f3()">입력완료</button>
+						<button type="button" onclick="f4()">입력내용</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

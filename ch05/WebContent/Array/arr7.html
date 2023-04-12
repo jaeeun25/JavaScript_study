@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			form{
+				background-color: skyblue;
+				box-shadow: 5px 5px 3px darkgray;
+				width: 400px;
+				height: 300px;
+				text-align: center;
+			}
+			button{
+				border-radius: 50px;
+				width: 120px;
+				height: 30px;
+				border: none;
+				color:red;
+				font-weight: bolder;
+			}
+		</style>
+		<script>
+			function compute(){
+				total = parseInt(form1['kor'].value)+parseInt(form1['math'].value);
+				avg = total/2;
+				alert(form1['stuName'].value+"학생의 평균성적은 "+avg+"점 입니다.");
+			}
+
+		</script>
+	</head>
+	<body>
+		<h3>문자열(name, key)인덱스를 활용한 배열 원소 참조</h3>
+		<hr>
+
+		<form name="form1" action="" method="">
+			<p>이 름: <input type="text" name="stuName" value="" placeholder="홍길동"></p>
+			<p>국어성적: <input type="text" name="kor" value=""></p>	<!-- input으로 오는건 다 문자로 옴(type이 number라도) -->
+			<p>수학성적: <input type="text" name="math" value=""></p>
+
+			<button type="button" onclick="compute()">성적처리결과</button>
+		</form>
+	</body>
+</html>

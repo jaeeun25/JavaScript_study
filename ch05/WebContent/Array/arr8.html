@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			landAnimal = ['호랑이', '사자', '표범'];
+			seaAnimal = new Array('고래', '상어');
+
+			document.write("<p>landAnimal배열의 내용: "+landAnimal.join('>')+"</p>");
+
+			//  반대로 정렬
+			//landAnimal.reverse();
+			document.write("<p>landAnimal 배열역정렬: "+landAnimal.reverse().join(">>>")+"</p>");
+
+			// 두개의 배열을 concat(): A.concat(B).join("->")
+			// 정렬: A.sort()
+			// 배열의 구간추출: A.slice(시작, 끝-1)
+			// 새로운 요소 추가: A.push(데이터)
+			// 마지막 요소를 반환하고 제거 : A.pop()
+
+			document.write("<p>A.concat(B).join('->'): "+landAnimal.concat(seaAnimal).join('->')+"</p>");
+			document.write("<p>A.sort(): "+landAnimal.sort()+"</p>");
+			document.write("<p>A.slice(1, 3-1): "+landAnimal.slice(1, 3)+"</p>");
+
+			landAnimal.push("고양이");
+			document.write("<p>A.push(데이터): "+landAnimal+"</p>");
+			document.write("<p>A.pop(): "+landAnimal.pop()+"</p>");
+			document.write("<p>A.pop() 후: "+landAnimal+"</p>");
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

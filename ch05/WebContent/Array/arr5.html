@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>이차원 배열</title>
+		<style>
+			table{
+				text-align: center;
+			}
+			caption{
+				font-size: 1.3em;
+			}
+			th, td{
+				width: 100px;
+				height: 50px;
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+			}
+			th:first-child, td:first-child{
+				border-left: 1px solid black;
+			}
+			tr:last-child td{
+				border-bottom: 1px solid black;
+			}
+			th{
+				color:white;
+				background: lightblue;
+			}
+			td{
+				background-color: lightgray;
+			}
+		</style>
+		<script>
+			let studentArr = new Array(
+				['김OO','수학',70,83],
+				['이OO','행정',92,95],
+				['박OO','물리',85,92],
+				['최OO','건축',97,88]
+			);
+			let student = new Array(
+				new Array('김OO','수학',70,83),
+				new Array('이OO','행정',92,95),
+				new Array('박OO','물리',85,92),
+				new Array('최OO','건축',97,88)
+			);
+
+			// student 배열 속의 값을 테이블에 가져와서 작성한다.
+			// student[i][j] - 중첩반복문이 필요
+			let score = function(){
+				for(i=0; i<student.length; i++){
+					document.write("<tr>");
+					for(j=0; j<student[i].length; j++){
+						document.write("<td>"+student[i][j]+"</td>");
+					}
+					document.write("</tr>");
+				}
+			}
+
+			// 값을 수정
+			student[0][0] = "값";	// 수정
+		</script>
+	</head>
+	<body>
+		<h2>이차원 배열</h2>
+		<hr>
+		<script>
+			document.write("<table cellpadding='0px' cellspacing='0px'>");
+				document.write("<caption>성적 테이블</caption>");
+				document.write("<tr><th>이름</th><th>전공</th><th>중간</th><th>기말</th></tr>");
+				score();
+			document.write("</table>");
+		</script>
+	</body>
+</html>

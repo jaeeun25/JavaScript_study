@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- 
+	. 연관배열(associative array)
+		- 배열에서 인덱스 대신에 name으로 지원하는 배열
+		- 내부적으로는 Object형 객체로 변환활용할 뿐이다.
+		- Array객체가 갖는 메소드를 지원받지 못한다.
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let score = new Array();
+			let season = new Array("봄", "여름", "가을", "겨울");
+			let subject = "java";
+			document.write(subject[0]+"<br>");
+
+			score['web']=75;
+			score['subject']=92;
+			score['project']=85;
+
+			document.write("score 배열 길이: "+score.length);	// 0 출
+			for(i=0; i<score.length; i++){
+				document.write(score[i]+" ");		// 인덱스로 검색되지 않는다. 출력되지 않는다.
+			}
+			document.write("<br>");
+			for(k in score){
+				document.write(score[k]+"<br>");	// 출력된다.
+			}
+
+			// season배열에 mar 춘곤기, sep 환절기 추가하고 길이 출력
+			// for, for-in으로 전체값출력해보기
+			season['mar'] = "춘곤기";
+			season['sep'] = "환절기";
+
+			document.write("<hr>for문: ");
+			for(i=0; i<season.length; i++){
+				document.write(season[i]+" ");
+			}
+
+			let cnt = 0;
+			document.write("<br>for-in문: ");
+			for(k in season){
+				document.write(season[k]+" ");
+				cnt++;
+			}
+
+			document.write("<br>season배열 길이: "+season.length);
+			document.write("<br>season배열 길이: "+cnt);			// fon-in문 통해 배열 요소 수 카운트
+
+			// student배열에 김oo, 이oo, 홍oo, 박oo 명단을 초기화 하고
+			// 전입생1 류oo, 전입생2 최oo로 추가하고, 전체 출력
+			let student = new Array("김oo", "이oo", "홍oo", "박oo");
+			document.write("<hr>student: ");
+			for(i=0; i<student.length; i++){
+				document.write(student[i]+" ");
+			}
+
+			student['전입생1'] = "류oo";
+			student['전입생2'] = "최oo";
+
+			document.write("<br>전입생 추가<br>for문: ");
+			for(i=0; i<student.length; i++){
+				document.write(student[i]+" ");
+			}
+			document.write("<br>for-in문: ");
+			for(k in student){
+				document.write(student[k]+" ");
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

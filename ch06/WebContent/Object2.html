@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 
+	다음 값들은 조건식을 거짓을 취급합니다.
+		. false
+		. undefined
+		. null
+		. 0
+		. NaN
+		. "" (빈 문자열)
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+
+			if(false){
+				document.write("<h3>if문 실행</h3>");
+			}
+			else if(undefined){
+				document.write("<h3>if문 실행</h3>");
+			}
+			else if(null){
+				document.write("<h3>if문 실행</h3>");
+			}
+			else if(0){
+				document.write("<h3>if문 실행</h3>");
+			}
+			else if(NaN){
+				document.write("<h3>if문 실행</h3>");
+			}
+			else if(""){
+				document.write("<h3>if문 실행</h3>");
+			}
+
+			// Object객체를 활용한 객체생성방법
+			let person = new Object();
+			person.name = "홍길동";
+			person.nickName = "X-man";
+			person.age = 24;
+			person.major = "자바스크립트";
+		</script>
+	</head>
+	<body>
+		<h3>Object 객체호출</h3>
+		<script>
+			document.write("이름: "+person.name+"<br>");
+			document.write("나이: "+person.age+"<br>");
+			document.write("별명: "+person.nickName+"<br>");
+			document.write("전공: "+person.major+"<hr>");
+
+			let person_arr = new Array();
+			let chk = true;
+			while(chk){
+				if((confirm("등록하시겠습니까?"))==true){
+					let name = prompt("이름을 입력하세요");
+					let age = prompt("나이를 입력하세요");
+					let nickName = prompt("별명를 입력하세요");
+					let major = prompt("전공을 입력하세요");
+
+					let person = new Object();
+					person.name = name;
+					person.nickName = nickName;
+					person.age = age;
+					person.major = major;
+
+					person_arr.push(person);
+				}
+				else{
+					chk=false;
+					break;
+				}
+			}
+
+			// 반복 출력
+			for(const p in person_arr){
+				document.write("<p>"+person_arr[p].name+" "+
+								person_arr[p].age+" "+
+								person_arr[p].nickName+" "+
+								person_arr[p].major+"</p>");
+			}
+		</script>
+	</body>
+</html>

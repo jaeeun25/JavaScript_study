@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 
+	Number 객체
+		. Wrapper 객체이다.
+		. 자바스크립트는 64비트 부동소수점 방식으로 저장한다.
+		. 함수 종류
+			- toString()	: 숫자 > 문자
+			- toFixed()		: 소수점 몇자리까지 >> 달러나 유로화를 출력할때 소수점 2자리
+							  (정수만 보여줄 때)
+			- parseInt()	: >> input으로 입력받는 값을 숫자로 전환연산
+			- parseFloat()
+
+			* padStart(3)	: 000
+							     월,날짜: 2023-1-1 >> 2023-01-01
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script>
+			let now = new Date();
+			let year = now.getFullYear();
+			let month = now.getMonth();
+			let day = now.getDate();
+
+			let str = year+"-"+month.toString().padStart(2, 0)+"-"+day.toString().padStart(2, 0);
+			document.write("<h3>"+str+"</h3>");
+		</script>
+	</body>
+</html>

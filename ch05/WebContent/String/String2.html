@@ -9,14 +9,14 @@
 			// indexOf()활용
 			let phone = function(){
 				while(true){
-					let phone = prompt("전화번호를 입력하세요.(-제외)","01012345678");
+					let phone = prompt("전화번호를 입력하세요.(-제외)");
 
-					if(phone.indexOf("-") == -1 && phone.length == 11){
-						document.write("<p>전화번호: "+phone+"</p>");
-						break;
+					if(phone.indexOf("-") != -1 || isNaN(phone) || phone.length != 11){
+						alert("잘못입력하셨습니다. 다시 입력해주세요.");
 					}
 					else{
-						alert("잘못입력하셨습니다. 다시 입력해주세요.");
+						document.write("<p>전화번호: "+phone+"</p>");
+						break;
 					}
 				}
 			}
