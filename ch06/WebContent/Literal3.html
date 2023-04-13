@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div{width: max-content; text-align: center;}
+			caption{font-size: 1.2em; font-weight: bolder;}
+			th, td{
+				width: 100px;
+				height: 40px;
+				border-top: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+			}
+			tr :first-child{border-left: 1px solid #ccc;}
+			tr:last-child td{border-bottom: 1px solid #ccc;}
+			th{background-color: #eee;}
+			td{background-color: lightyellow;}
+			button{
+				border-radius: 10px;
+				border: 1px solid #ccc;
+				width: 120px;
+				height: 25px;
+				margin-top: 10px;
+				background-color: lightsalmon;
+				font-weight: bolder;
+			}
+		</style>
+		<script>
+			// 객체는 리터럴 표기법을 활용한다.
+			// 배열을 준비한다.
+			// 회원등록을 하시겠습니까? false까지 반복한다.
+			// 이름, 나이, 주소를 받는다.
+			// 객체를 생성해서 
+			// 배열에 저장한다.
+
+			let members = new Array();
+			while(confirm("회원등록을 하시겠습니까?")){
+				let member = {
+					name : prompt("이름을 입력해주세요"),
+					age : parseInt(prompt("나이를 입력해주세요")),
+					address : prompt("주소를 입력해주세요")
+				};
+				
+				members.push(member);
+			}
+
+			function search(){
+				let name = prompt("검색할 회원의 이름을 입력해주세요");
+
+				for(let m in members){
+					if(members[m].name == name){
+						document.getElementById('search').innerHTML="<h3>"+members[m].name+"님의 나이는 "+members[m].age+"세이고, 주소는 "+members[m].address+"입니다.</h3>";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--  특정한 포맷에다가
+		 		- 특정 회원정보를 출력한다.
+				 - 전체 회원정보를 출력한다. -->
+		<div>
+			<table cellpadding="0px" cellspacing="0px">
+				<caption>회원 목록</caption>
+				<tr>
+					<th>이름</th>
+					<th>나이</th>
+					<th>주소</th>
+				</tr>
+				<script>
+					for(let m in members){
+						document.write("<tr><td>"+members[m].name+"</td><td>"+members[m].age+"</td><td>"+members[m].address+"</td></tr>")
+					}
+				</script>
+			</table>
+			<button type="button" onclick="search()">특정 회원 검색</button>
+		</div>
+		<p id="search"></p>
+	</body>
+</html>

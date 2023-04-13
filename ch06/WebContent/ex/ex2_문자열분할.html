@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>문자열 분할</title>
+		<script>
+			
+			document.write("<h3>문자열 분할</h3>");
+			document.write("<hr>");
+			
+			let str = prompt("문자열 입력(최소 세자리 이상)");
+			let str_arr = [];
+
+			if(str.length < 3){	// 유효성 검사
+				alert("문자열을 최소 세자리 이상 입력해주세요");
+			}
+			else{
+				for(let i=0; i<str.length; i++){
+					str_arr.push(str[i]);
+				}
+
+				document.write("<p>하이픈 추가: "+str_arr.join("-")+"</p>");
+				document.write("<p>2번째~마지막 전 문자까지 출력: "+str.slice(1, str.length-1)+"</p>");
+				document.write("<p>대문자로 변경: "+str.toUpperCase()+"</p>");
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>날짜객체</title>
+		<script>
+
+			// 오늘 날짜, 시간을 제목으로(이때, 형식은 2023/04/13 형식 - join사용)
+			let now = new Date();
+			let date = [now.getFullYear(), (now.getMonth()+1).toString().padStart(2, 0), now.getDate().toString().padStart(2, 0)];
+			let time = [now.getHours(), now.getMinutes().toString().padStart(2, 0), +now.getSeconds().toString().padStart(2, 0)];
+			document.write("<h3>"+date.join('/')+" "+time.join(':')+"</h3>");
+			document.write("<hr>");
+
+			// 2020년 1월 1일부터 오늘까지 일한다고 했을 때 근속 개월수 산출하고 퇴직금 정산하기
+			let old = new Date(2020,1,1)
+			let result = (now.getTime() - old.getTime())/(1000*60*60*24);
+			
+			document.write("<p>근속개월수: "+ Math.round(result/30) +"개월</p>");
+			document.write("<p>퇴직금: "+9620*30*Math.round(result/365)+"원</p>");
+
+						
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

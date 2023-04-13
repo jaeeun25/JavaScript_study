@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 은행계좌 입출금을 프로토타입 객체생성으로 구현해보시오.
+			function Account(name, code, balance){
+				this.name = name;
+				this.code = code;
+				this.balance = balance;
+
+				this.deposit = function(money){
+					this.balance += money;
+				}
+				this.withdraw = function(money){
+					this.balance -= money;
+				}
+				this.inquiry = function(){
+					return this.balance;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script>
+			let bank_book = new Account("홍길동", "1111", 35000);
+
+			document.write("예금주: "+bank_book.name+"<br>");
+			document.write("통장번호: "+bank_book.code+"<br>");
+			document.write("잔액: "+bank_book.balance+"<br><br>");
+			
+			bank_book.deposit(10000);	// 만원 입금
+			document.write("10000원 입금 후 잔액은 "+bank_book.inquiry()+"<br>");
+
+			bank_book.withdraw(5000);	// 오천원 출금
+			document.write("5000원 인출 후 잔액은 "+bank_book.inquiry()+"<br>");				
+		</script>
+	</body>
+</html>

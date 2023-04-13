@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>난수 생성</title>
+		<script>
+			
+			document.write("<h3>난수 10개 생성</h3>");
+			document.write("<hr>");
+			
+			let numbers = [];
+
+			for(let i=0; i<10; i++){
+				numbers.push(Math.floor(Math.random()*100)+1);
+			}
+			
+			// 정렬
+			numbers.sort();
+			for(n in numbers){
+				document.write(numbers[n] + " ");
+			}
+			document.write("<br>");
+			
+			// 역정렬
+			numbers.reverse();
+			for(n in numbers){
+				document.write(numbers[n] + " ");
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

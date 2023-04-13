@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// Calculator(num1, num2) 생성자 함수
+			// 속성 : num1, num2
+			// 메소드 : add, sub, mul, div 외부에서 구현(일부)해서 메소드로 만든다.
+
+			function Calculator(num1, num2){
+				this.num1 = num1;
+				this.num2 = num2;
+
+				// 메소드
+				this.add = function(){
+					return this.num1 + this.num2;
+				}
+				this.sub = function(){
+					return this.num1 - this.num2;
+				}
+				this.mul = mul;
+				this.div = div;
+			}
+
+			// 외부함수
+			function mul(num1, num2){
+				return num1 * num2;
+			}
+			function div(num1, num2){
+				return (num1 / num2).toFixed(2);
+			}
+
+
+		</script>
+	</head>
+	<body>
+		<script>
+			// 첫번째 수 입력 - parseInt()
+			// 두번째 수 입력 - new Number(prompt());
+			let num1 = parseInt(prompt("첫번째 수 입력"));
+			let num2 = new Number(prompt("두번째 수 입력"));
+
+			// 계산기 객체 활용 - 더하기,,,
+			let cal = new Calculator(num1, num2);
+
+			document.write("<h3>더하기: "+cal.add()+"</h3>");
+			document.write("<h3>빼기: "+cal.sub()+"</h3>");
+			document.write("<h3>곱하기: "+cal.mul(num1, num2)+"</h3>");
+			document.write("<h3>나누기: "+cal.div(num1, num2)+"</h3>");			
+		</script>
+	</body>
+</html>

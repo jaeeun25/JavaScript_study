@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function Student(name, dept, grade){
+				this.name = name;
+				this.dept = dept;
+				this.grade = grade;
+				this.phone = "010-xxxx-xxxx";
+
+				this.study = function(){
+					document.write("<h3>열심히 공부한다.</h3>");
+				}
+			}
+
+			let person = {
+				name : "홍길동",
+				age : 20,
+				hobby : ['축구', '야구', '배구']
+			}
+		</script>
+	</head>
+	<body>
+		<script>
+			let s1 = new Student("홍길동", "컴퓨터과학과", 1);
+			let s2 = new Student("이길동", "행정학과", 2);
+			
+			// 클라이언트와 서버 간 통신
+			//	. 자바스크립트 객체(Object) >>JSON.stringify(객체) JSON(String)
+			// 	. JSON을 >> 객체로 활용할때.. >> JSON.parse(JSON데이터) >> 활용
+
+			document.write(typeof(s1)+"<br>");
+			let s3 = JSON.stringify(s1);
+			document.write(typeof(s3)+"<br>");
+			document.write(s3);			// JSON데이터 출력
+
+			let s4 = JSON.parse(s3);	// 자바스크립트 객체
+			document.write("<br>");
+			document.write(typeof(s4)+"<br>");
+
+			document.write(s4.name);
+			document.write(s4.dept);
+			
+			document.write("<br>");
+			// person으로 위의 내용을 실행해보세요
+			document.write(typeof(person)+"<br>");
+			let p = JSON.stringify(person);			// 자바스트립트 객체 >> JSON(String)
+			document.write(typeof(p)+"<br>");
+			document.write(p+"<br>");
+
+			let p2 = JSON.parse(p);					// JSON >> 객체
+			document.write(typeof(p2)+"<br>");
+			document.write(p2.name+"<br>");
+		</script>
+	</body>
+</html>

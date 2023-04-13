@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let calculator = {
+				add : function(n1, n2){return n1+n2;},
+				sub : function(n1, n2){return n1-n2;},
+				mul : function(n1, n2){return n1*n2;},
+				div : function(n1, n2){return (n1/n2).toFixed(2);}	//fixed()
+			};
+		</script>
+	</head>
+	<body>
+		<script>
+			document.write("<h3>더하기: "+calculator.add(20, 30)+"</h3>");
+			document.write("<h3>빼기: "+calculator.sub(20, 30)+"</h3>");
+			document.write("<h3>곱하기: "+calculator.mul(20, 30)+"</h3>");
+			document.write("<h3>나누기: "+calculator.div(20, 30)+"</h3>");
+		</script>
+	</body>
+</html>

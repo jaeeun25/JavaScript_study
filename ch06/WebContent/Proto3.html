@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function Gugudan(dan){
+				this.dan = dan;				// 속성(필드, 프로퍼티)
+
+				// 반복문
+				for(let i=1; i<10; i++){
+					document.write("<h3>"+dan+"*"+i+"="+(this.dan*i)+"</h3>");
+				}
+
+				// 메소드1 - 내부에서 구현
+				this.guguPrint = function(){
+					for(let i=1; i<10; i++){
+						document.write("<h3>"+this.dan+"*"+i+"="+(this.dan*i)+"</h3>");
+					}
+				}
+
+				// 메소드2 = 외부함수를 활용구현
+				this.print = print;		// 외부에 있는 함수를 메소드로 활용
+			}
+
+			// 메소드로 활용할 외부함수 - 부품함수  -> 다른 애들도 쓸 수 있음 = 공용
+			function print(dan){
+				for(let i=1; i<10; i++){
+					document.write("<h3>"+dan+"*"+i+"="+(dan*i)+"</h3>");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script>
+			let dan = parseInt(prompt("단을 입력해주세요"));
+			let gugu = new Gugudan(dan);
+			
+			document.write("<hr>");	
+			gugu.guguPrint();		// 내부함수
+			gugu.print(dan);		// 외부함수
+		</script>
+	</body>
+</html>

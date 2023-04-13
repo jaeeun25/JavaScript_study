@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>book 객체-Object</title>
+		<script>
+			let book_sale = new Object();
+			book_sale.arr = [];
+			book_sale.show = function(){
+				for(b in book_sale.arr){
+					document.write("<p>No. "+this.arr[b].no+"</p>");
+					document.write("<p>저자: "+this.arr[b].author+"</p>");
+					document.write("<p>가격: "+this.arr[b].price+"</p>");
+					document.write("<p>재고: <span id='stock"+this.arr[b].no+"'>"+this.arr[b].stock+"</span></p>");
+					document.write("<p>판매금액: <span id='cal"+this.arr[b].no+"'>0<span>원</p>");
+					document.write("<hr>");
+				}
+			}
+
+			let i = 1;
+			while(confirm("책을 등록하시겠습니까?")){
+				let book = new Object();
+				book.no = i++;
+				book.author = prompt("저자 입력");
+				book.price = parseInt(prompt("가격 입력"));
+				book.stock = parseInt(prompt("재고 수량 입력"));
+				book.cnt = 0;	// 판매수량
+
+				book_sale.arr.push(book);
+			}
+
+			let insert = function(){
+				let _no = parseInt(prompt("책 No. 입력"));
+				let _cnt = parseInt(prompt("구매수량 입력"));
+
+				let _book = book_sale.arr[_no-1];
+
+				if(_book.stock < _cnt){
+					alert("재고가 부족합니다.");
+				}
+				else{
+					_book.cnt += _cnt;
+					_book.stock -= _cnt;
+					document.getElementById(`stock${_no}`).innerHTML=_book.stock;
+					document.getElementById(`cal${_no}`).innerHTML=_book.cnt*_book.price+"원";
+				}
+			}
+
+					
+		</script>
+	</head>
+	<body>
+		<script>
+			document.write("<h3>Book객체 생성 및 값 출력</h3>");
+			document.write("<hr>");
+
+			book_sale.show();	
+		</script>
+		<button type="button" onclick="insert()">장바구니에 책 담기</button>
+	</body>
+</html>

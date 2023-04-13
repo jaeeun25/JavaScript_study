@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- 
+	1. 브라우저 속에는..
+		. 코어 객체 			: String, Math, Array, Date, 사용자 객체
+		. HTML DOM객체 	: 태그들 -> 1:1의 객체를 갖는다.
+		. BOM 객체 		: document, naviator, history, location, screen
+
+		*				window
+					 	  |
+			-----------------------------------------
+			navigator	document	history		location			-> 여기까지 BOM 객체
+						   |
+						  html										-> 여기서부터 DOM 객체
+						   |
+					-----------------
+					head			body
+					  |				  |
+				  -------		--------------
+				  meta	title	p			form  (부모)
+							  ▲	|			  |
+							  |	span		------------
+							  |				input input hr	(자식)
+						  	  |				  *
+							  |				target
+                              |
+   (previousElementSibling) < p > (nextElementSibling)
+
+		. 부모객체: parentElemet
+		. 직계자식: children
+		. 첫번째 직계자식: firstElementChild   
+		. 마지막 직계자식: lastElementChild
+		. 왼쪽 사촌: previousElementSibling
+		. 오른쪽 사촌: nextElementSibling
+
+		. DOM객체의 구성
+			- 프로퍼티: id, tagName, innerHTML, style(객체주소)..
+			- 메소드: focus(), setAttribute(), click()..
+			- 컬렉션: children
+			- 이벤트: onclick, onkeydown, onload..
+
+			* style객체: color, border..
+
+		. document.write(h3.tagName)
+		. document.write(h3.id)
+		. document.write(h3.innerHTML)
+
+		// 스타일값 읽는 방법
+		. h3.style.color = "pink"
+		. h3.getPropertyValue("color")	// 동적으로 style적용했을 때 읽지 못하는 수 있다.
+
+		. 태그 (DOM객체)
+			- document.getElementById("id");
+			- document.getElementsTagName("p");	>> 배열식
+			- document.getElementsClassName("class"); >> 배열식
+
+	2. HTML DOM 객체
+			구분			프로퍼티					설명							r/w
+			-------------------------------------------------------------------
+			기본			 id			                              태그의 id						r/w
+						 lang		     		태그의 lang					r/w
+						 title		     		태그의 title					r/w
+						 tagName	     		태그 이름						r
+						 innerHTML	    		시작과 종료 태그 사이의 HTML텍스트		r/w
+						 style		  			style객체에 대한 주소(레퍼런스)		r/w
+			-------------------------------------------------------------------
+			DOM트리 관련	 childElementCount 		자식DOM객체개수					r
+			속성			 firstElementChild		첫번째 자식객체					r
+						 lastElementChild		마지막 자식객체					r
+						 nextElementSibling		다음 형제						r
+						 parentElement			부모객체						r
+						 previousElementSibling 이전 형제						r
+			-------------------------------------------------------------------
+			위치와 크기속성	 offsetHeight			패딩,테두리,스크롤바를 표함하는 높이		r
+						 offsetWidth					 "					r
+						 offsetLeft				객체의 출력위치, 수평옵셋				r
+						 offsetTop				객체의 출력위치, 수직옵셋				r
+			-------------------------------------------------------------------
+			컬렉션			 children				자식DOM객체들의 컬렉션(배열)			r
+			*******************************************************************
+			메소드			 addEventListener()		새로운 이벤트 리스너 등록
+						 removeEventListener()	add~리스너로 등록한 이벤트 리스너 제거
+
+						 click()				사용자가 마우스를 클릭한 것과 동일한 작업
+						 focus()				키 입력을 받을 수 있도록 포커스 지정
+
+						 setAttribute()			속성 추가
+						 getAttribute()			속성 알아내기
+
+						 appendChild()			마지막 자식 뒤에 새로운 자식 추가
+						 insertBefore()			지정된 자식 앞에 새로운 자식 추가
+						 removeChild()			자식 삭제
+						 replaceChild()			자식 대체
+
+						 querySelector()		지정된 셀렉터와 일치하는 첫번째 자식
+
+	3. document 객체
+			구분		프로퍼티					설명									r/w
+			-----------------------------------------------------------------------
+			속성		location				현재 문서의 URL 정보를 가진 location객체 주소		
+					domain					서버의 도메인 이름
+					cookie					쿠키에 대한 레퍼런스
+					lastModified			문서의 마지막 수정시간(년,월,일,시,분,초)
+					---------------------------------------------------------------
+					title					문서의 제목 <title>
+					body					body객체에 대한 레퍼런스
+					head					head객체에 대한 레퍼런스
+					---------------------------------------------------------------
+					activeElement			문서 내에서 포커스를 받는 자식객체
+					documentElement			html 객체에 대한 레퍼런스
+					URL						현재 문서의 URL
+					---------------------------------------------------------------
+					images					문서 내의 모든 <img>객체들의 컬렉션
+					links					문서 내의 모든 href속성을 가진 객체들의 컬렉션 <a>
+					forms					문서 내의 모든 <form>객체들의 컬렉션
+					---------------------------------------------------------------
+					***************************************************************
+					getElementById()		주어진 id를 가진 모든 태그(DOM)의 컬렉션 리턴
+					getElementsByClassName()주어진 class속성을 가진 모든 태그의 컬렉션 리턴
+					getElementsByTagName()	주어진 태그이름을 가진 태그들의 컬렉션 리턴
+					getElementsByName()		주어진 Name을 가진 태그들의 컬렉션 리턴
+					---------------------------------------------------------------
+					addEventListener()		document객체에 이벤트리스너 등록
+					removeEventListener()	이벤트 리스너 제거
+					---------------------------------------------------------------
+					creatElement()			HTML태그의 동적생성
+					---------------------------------------------------------------
+					open()					document에 담긴 콘텐츠를 모두 지우고 새로운 HTML
+											콘텐츠를 쓸 수 있도록 연다
+					close()					HTML콘텐츠를 출력하고나서 더이상 쓰기를 받지 않음
+					---------------------------------------------------------------
+					write()/writeln()			
+
+ -->	
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML DOM객체 학습</title>
+	</head>
+	<body>
+		<p id="t1" style="color:blue">이것은 <span>문장입니다.</span></p>
+		<form id="t2" action="">
+			<input type="text">
+			<input type="button" value="테스트" onclick="f()">
+			<hr>
+		</form>
+		<script>
+		function f(){
+			let p1 = document.getElementById('t1');
+			let v1 = p1.firstElementChild;
+			let v2 = p1.parentElement;
+
+			document.write("태그이름: "+p1.tagName+"<br>");
+			document.write("첫번째 자식이름: "+v1.tagName+"<br>");
+			document.write("부모 이름: "+v2.tagName+"<br>");
+		}
+		</script>
+	</body>
+</html>
