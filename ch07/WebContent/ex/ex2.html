@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			ol{
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>라면을 끓이는 순서</h3>
+		<hr>
+		<ol id="ol" type="A">
+			<li id="li1" onclick="add(this.id)">물을 끓인다.</li>
+		</ol>
+
+		<script>
+			let i = 1;
+
+			function add(id){
+				if(id == ('li'+i)){
+					let new_tag = document.createElement('li');
+					new_tag.innerHTML = prompt("다음 순서를 입력하세요.");
+					if(new_tag.innerHTML == "") return;	// 아무것도 입력 안한 경우
+
+					i++;
+
+					new_tag.setAttribute("id", "li"+i);
+					new_tag.setAttribute("onclick", "add(this.id)");
+
+					let parent = document.getElementById('ol');
+					parent.appendChild(new_tag);
+				}
+			}		
+		</script>
+	</body>
+</html>

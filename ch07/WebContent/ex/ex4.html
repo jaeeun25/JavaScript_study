@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h3>정답의 동적 삽입</h3>
+		<hr>
+		<div id="q1">
+			<p>Q. 거울아 거울아 세상에서 누가 제일 예쁘니?</p>
+			<button type="button" onclick="answer('q1')">답보기</button>
+			<p></p>
+		</div>
+		<div id="q2">
+			<p>Q. 죽느냐 사느냐 어떤 것이 문제인가?</p>
+			<button type="button" onclick="answer('q2')">답보기</button>
+			<p></p>
+		</div>
+
+		<script>
+			function answer(q){
+				let ans = document.getElementById(q).lastElementChild;
+
+				if(ans.innerHTML != ""){	// 답이 있다면 다시 공백 처리
+					ans.innerHTML = "";
+				}
+				else {
+					if(q == 'q1') {
+						ans.innerHTML = "백설공주";
+					}
+					else ans.innerHTML = "둘 다";
+				}
+			}
+		</script>
+	</body>
+</html>

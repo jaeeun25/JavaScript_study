@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function listPlace(){
+				let new_li = document.createElement('li');
+				new_li.innerHTML = document.getElementById('t1').value;
+				
+				let t2 = document.getElementById('t2');
+				t2.appendChild(new_li);
+				
+				document.getElementById('t1').value = "";
+			}
+		</script>
+	</head>
+	<body>
+		여행하고 싶은 지역<input id="t1" type="text">
+		<button type="button" onclick="listPlace()">추가</button>
+		<ul id="t2"></ul>
+	</body>
+</html>

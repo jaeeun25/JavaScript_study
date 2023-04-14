@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>		
+	</head>
+	<body>
+		추천 여행지:&nbsp;<input id="t1" type="text">
+		<button type="button" onclick="listPlace1()">국내</button>
+		<button type="button" onclick="listPlace2()">해외</button>
+		<div id="d1">
+			<div>1. 국내여행지</div>
+			<div id="d2">2. 해외여행지</div>
+		</div>
+		<script>
+			// 국내
+			function listPlace1(){
+				let tag1 = document.getElementById('t1');	// input
+				let tag2 = document.getElementById('d1');	// 부모
+				let tag3 = document.getElementById('d2');	// 자식
+
+				// 새로운 태그(DOM객체)--------------------------------------
+				let newTag = document.createElement('div');	// 붙일 자식
+
+				// 새로운 태그(DOM객체) - innerHTML
+				let textNode = document.createTextNode(tag1.value);	// input에 입력값
+				newTag.appendChild(textNode);
+				newTag.style.color = "blue";
+				// ----------------------------------------------------
+			
+				tag2.insertBefore(newTag, tag3);	// tag3앞에 새로운 태그 넣겠다. 부모.insertBefore(신규태그, 기준위치)
+				
+				tag1.value = "";		// input의 입력창을 깨끗하게 만든다.
+			
+			}
+
+			// 해외
+			function listPlace2(){
+				let tag1 = document.getElementById('t1');
+				let tag2 = document.getElementById('d1');
+				let tag3 = document.getElementById('d2');
+				
+				let newTag = document.createElement('div');
+				let textNode = document.createTextNode(tag1.value);
+				newTag.appendChild(textNode);
+				newTag.style.color = "orange";
+
+				tag2.append(newTag);
+				
+				tag1.value = "";
+			}
+		</script>
+	</body>
+</html>

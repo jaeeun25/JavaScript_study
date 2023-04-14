@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h3>DOM객체 p의 속성, 스타일</h3>
+		<hr>
+		<p id="first" style ="color:green; background: yellow;" onclick="this.style.color='tead'">
+			오늘은<span>금요일</span>입니다.
+		</p>
+	<!-- 
+		. p 태그 이름
+		. p의 innerHTML
+		. P의 글자색
+		. p의 onclick 내용
+		. p의 자식 수
+		. p의 너비(offsetWidth)
+		. p의 높이(offsetHeight)
+	 -->
+
+	 <script>
+		 let p = document.getElementById('first');
+		 
+		 document.write("<p>"+p.tagName+"</p>");
+		 document.write("<p>"+p.innerHTML+"</p>");
+		 document.write("<p>"+p.style.color+"</p>");
+		 document.write("<p>"+p.onclick+"</p>");
+		 document.write("<p>"+p.childElementCount+"</p>");
+		 document.write("<p>"+p.offsetWidth+"</p>");
+		 document.write("<p>"+p.offsetHeight+"</p>");	 
+	 </script>
+	</body>
+</html>

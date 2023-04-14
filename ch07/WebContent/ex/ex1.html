@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			ol{
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>웹 브라우저 이미지 이동</h3>
+		<hr>
+		<div id="img_box">
+			<img src="./img/bird1.png" width="150" height="150">
+			<img src="./img/bird2.png" width="150" height="150">
+			<img src="./img/bird3.png" width="150" height="150">
+			<img src="./img/bird4.png" width="150" height="150">
+			<img src="./img/bird5.png" width="150" height="150">
+			<img src="./img/bird6.png" width="150" height="150">		
+		</div>
+
+		<script>
+			window.setInterval(function(){
+				let img_tags = document.querySelectorAll('img');
+				let moving_img = img_tags[0];
+				moving_img.parentNode.removeChild(moving_img);
+				
+				let parent = document.getElementById('img_box');
+				parent.appendChild(moving_img);
+			}, 200);	
+		</script>
+	</body>
+</html>

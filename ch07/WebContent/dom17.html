@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function new_img(src){
+				let new_img = document.createElement('img');
+				new_img.setAttribute("src", src);
+				new_img.width = 100;		// .setAttribute("width", 100)과 동일
+				new_img.height = 100;
+				let p = document.getElementById('parent');
+				p.appendChild(new_img);
+			}		
+		</script>
+	</head>
+	<body>
+		<h3>버튼을 클릭해서 이미지를 추가해 봅니다.</h3>
+		<hr>
+		<button type="button" onclick="new_img('./img/choon.png')">고구마춘식</button>
+		<button type="button" onclick="new_img('./img/choon1.png')">군밤춘식</button>
+		<button type="button" onclick="new_img('./img/choon2.png')">요정춘식</button>
+		<div id="parent"></div>
+		<hr>
+		<p>춘식이는 정말 귀엽다. 도도도 춘식 만관부♥</p>
+	</body>
+</html>

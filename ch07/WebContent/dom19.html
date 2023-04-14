@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div id="p1">
+			<img src="./img/choon1.png" width="60" height="60">
+			<img src="./img/choon2.png" width="60" height="60" id="w1">
+			<img src="./img/choon3.png" width="60" height="60">
+			<img src="./img/choon4.png" width="60" height="60" id="w2">
+			<img src="./img/choon5.png" width="60" height="60">
+			<img src="./img/choon6.png" width="60" height="60">
+			<img src="./img/choon7.png" width="60" height="60">			
+		</div>
+		<hr>
+		<button type="text" onclick="del()">두번째 이미지 삭제</button>
+		<button type="text" onclick="replace()">네번째 이미지 대체</button>
+
+		<script>
+		 function del(){
+			let del_tag = document.getElementById('w1');
+			del_tag.remove();
+		 }
+
+		 function replace(){
+			let new_tag = document.createElement('img');
+			new_tag.setAttribute('src', './img/choon8.png');
+			new_tag.setAttribute('width', '60px');
+			new_tag.setAttribute('height', '60px');
+			
+			let old_tag = document.getElementById('w2');
+			let parent = old_tag.parentNode;
+			parent.replaceChild(new_tag, old_tag);		// 부모의 자식들 중에 old를 new로 변경
+		 }
+		</script>
+	</body>
+</html>
