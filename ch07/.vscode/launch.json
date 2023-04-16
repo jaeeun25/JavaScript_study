@@ -19,6 +19,126 @@
       "port": 9261,
       "webRoot": "${workspaceFolder}",
       "url": "http://localhost:80/ch07/dom2.html"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9282,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom1.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (2)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9287,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom3.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (3)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9211,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom4.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (4)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9262,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom5.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (5)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9280,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom6.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (6)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9207,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom7.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (7)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9264,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom8.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (8)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9296,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom9.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (9)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9288,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom11.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (10)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9212,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom13.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (11)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9206,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom14.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (12)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9254,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom15.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (13)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9207,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom18.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (14)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9282,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom19.html?_cmAuth\u003dldqqhkeysf"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (15)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9296,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:63165/p/ch07/WebContent/dom21.html?_cmAuth\u003dldqqhkeysf"
     }
   ]
 }
