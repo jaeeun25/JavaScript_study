@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let p2;
+
+			// p1과 p2는 옆으로 배치되게 하세요
+			function init(){
+				let p1 = document.getElementById('p1');
+				p2 = document.getElementById('p2');
+				let p3 = document.getElementById('remove');
+
+				p1.style.display = 'inline-block';
+				p2.style.display = 'inline-block';
+				
+
+				p1.onmouseover = function(){
+					// p1의 배경색을 orchid로
+					p1.style.backgroundColor = 'orchid';
+
+				}
+				p1.onmouseout = function(){
+					// p1의 배경색을 white로
+					p1.style.backgroundColor = 'white';
+
+				}
+				p2.addEventListener('click', bigsize);
+
+				btn.onclick = function(){
+					// p2.글자 크기 1em
+					// p2.배경색 yellow
+					// p2.bigsize 이벤트 리스너 제거
+					p2.style.fontSize = '1em';
+					p2.style.backgroundColor = 'yellow';
+					
+					p2.removeEventListener('click', bigsize);
+				}
+			}
+
+			function bigsize(){
+				p2.style.fontSize = "3em";
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<h3>익명함수로 이벤트리스너 작성</h3>
+		<hr>
+		<p id="p1">마우스를 올리면 orchid색으로 변경됩니다.</p>
+		<p id="p2">마우스를 클릭하면 글자 크기가 커집니다.</p>
+		<br>
+		<button id="btn" type="button">이벤트제거</button>
+	</body>
+</html>

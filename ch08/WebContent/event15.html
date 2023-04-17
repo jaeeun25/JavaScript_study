@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>실습</title>	
+		<script>
+			let base = "./img/";
+			let files = ["choon1.png", "choon2.png", "choon3.png", "choon4.png", "choon5.png",];
+			let imgs = new Array();
+			
+			for(i=0; i<files.length; i++){
+				imgs[i] = new Image();
+				imgs[i] = base+files[i];
+			}
+			let next = 1;
+
+			function change(img){
+				img.src = imgs[next];
+				if(next == imgs.length-1){
+					next = 0;
+				}
+				else{
+					next++;
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<h3>new Image()로 이미지 로딩</h3>
+		<hr>
+		<p>이미지를 클릭하면 다음 이미지를 보여줍니다.</p>
+		<img style="border: 20px ridge wheat;" src="./img/choon1.png" alt="" width="200px" height="200px"
+			onclick="change(this)">
+	</body>
+</html>

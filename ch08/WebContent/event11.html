@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+	select
+		. 콤보박스를 나타낸다.
+		. 선택된 option은 selectedIndex로 알아낸다.
+		. onchange리스너와 연결하여 사용한다.
+		. lenghth : 옵션개수
+		. selectedIndex: 선택된 option의 인덱스
+		. size
+	
+	option
+		. selected : chedcked와 동일한 역할
+		. text : 옵션 문자열
+		. value : value 속성 문자열
+	
+	Image
+		. 이미지출력: 1) 자바스크립트에서 new Image() 객체를 생성해서 할 수 있다.
+					. img.src="";
+					. let image =  new Image()는 이미지를 미리 로딩시켜놓는 역할을 한다.
+					. img.src="image";
+				  2) <img src=''>
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function changeImage(){
+				let sel = document.getElementById('sel');
+				let img = document.getElementById('myImg');
+
+				img.onload = function(){
+					let myImgSize = document.getElementById('myImgSize');
+					myImgSize.innerHTML = img.width + "X" + img.height;
+				}
+				let index = sel.selectedIndex;
+				img.src = sel.options[index].value;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="frm1">
+			<select id="sel" onchange="changeImage()">
+				<option value="./img/choon1.png">낚시꾼 춘식</option>
+				<option value="./img/choon2.png">외계인 춘식</option>
+				<option value="./img/choon3.png">사회자 춘식</option>
+			</select>
+			<span id="myImgSize">이미지 크기</span>
+		</form>
+		<p><img id="myImg" src="./img/choon1.png"></p>
+	</body>
+</html>
