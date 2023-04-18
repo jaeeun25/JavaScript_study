@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h3>이미지 위에서 마우스가 올라가면  3초 뒤에 내가 만든 페이지가 500*500사이즈에 출력된다.</h3>
+		<p>그런데 마우스가 내려오면 3초 타이머가 중지된다.</p>
+		<hr>
+		<img src="./img/choon1.png" width="300" height="300" id="img">
+		<a href="javascript:load('https://store.kakaofriends.com/home')">현재 윈도우에 URL사이트 로드</a>
+		
+		<script>
+			let img = document.getElementById('img');
+			let time = null;
+
+			img.addEventListener('mouseover', function(){
+				time = setTimeout(winOpen, 3000);
+				img.title="타이머가 작동중..";
+			});
+			img.addEventListener('mouseout', function(){
+				if(time != null){
+					clearTimeout(time);
+				}
+			});
+
+			function winOpen(){
+				window.open('event16.html', 'mywin', 'width=500,height=500,left=500,top=500');
+			}
+
+			function load(URL){
+				window.location = URL;
+			}
+		</script>
+	</body>
+</html>

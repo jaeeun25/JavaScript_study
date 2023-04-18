@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+	웹페이지 스크롤
+		; window객체를 활용하면 웹 페이지를 상하좌우로 스크롤 할 수 있다.
+
+		- scrollBy(x,y) , scrollTo(x,y);
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function startScroll(interval){
+				setInterval('autoScroll()', interval)
+			}
+			function autoScroll(){
+				window.scrollBy(0, 10);
+			}
+		</script>
+	</head>
+	<body onload="startScroll(1000)" style="background: yellow;">
+		<h3>자동 스크롤 페이지</h3>
+		<hr>
+		<h3>Title</h3>
+		Lorem ipsum dolor sit amet,<br>
+		consectetur adipiscing elit,<br>
+		sed do eiusmod tempor incididunt ut<br>
+		labore et dolore magna aliqua.<br>
+		Ut enim ad minim veniam,<br>
+		quis nostrud exercitation ullamco<br>
+		laboris nisi ut aliquip ex ea commodo consequat.<br>
+		Duis aute irure dolor in reprehenderit in voluptate<br>
+		velit esse cillum dolore eu fugiat nulla pariatur.<br>
+		Excepteur sint occaecat cupidatat non proident,<br>
+		sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</body>
+</html>

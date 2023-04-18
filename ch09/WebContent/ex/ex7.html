@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			input[type='button']{
+				width: 50px;
+				margin: 0 5px
+			}
+			#result{
+				width: 250px;
+			}
+		</style>
+		<script>
+			let btn;
+			let old_btn = "";
+
+			function init(){
+				btn = document.getElementsByClassName("btn");
+
+				for(i=0; i<btn.length; i++){
+					let b = btn[i];
+					b.addEventListener('click', cal);
+				}
+			}
+
+			function cal(){
+				let result = document.getElementById('result');
+				let v = this.value;
+
+				if(old_btn == '=') result.value = "";
+
+				if(v >= 0 && v <=9)result.value += v;
+				else if(v=='+' || v=='-' || v=='*' || v=='/') result.value += v;
+				else if(v=='=') result.value = eval(result.value);
+				else if(v=='CE'||v=='C') result.value = "";
+				else if(v=='BACK') {
+					result.value = result.value.toString().slice(0, result.value.length-1);
+				}
+
+				old_btn = v;
+			}
+		
+		</script>
+	</head>
+	<body onload="init();">
+		<h3>계산기 만들기</h3>
+		<hr>
+		<input type="text" id="result">
+		<table>
+			<tr>
+				<td><input type="button" value="BACK" class="btn"></td>
+				<td><input type="button" value="CE" class="btn"></td>
+				<td><input type="button" value="C" class="btn"></td>
+				<td><input type="button" value="=" class="btn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" class="btn"></td>
+				<td><input type="button" value="8" class="btn"></td>
+				<td><input type="button" value="9" class="btn"></td>
+				<td><input type="button" value="/" class="btn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" class="btn"></td>
+				<td><input type="button" value="5" class="btn"></td>
+				<td><input type="button" value="6" class="btn"></td>
+				<td><input type="button" value="*" class="btn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" class="btn"></td>
+				<td><input type="button" value="2" class="btn"></td>
+				<td><input type="button" value="3" class="btn"></td>
+				<td><input type="button" value="-" class="btn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" class="btn"></td>
+				<td><input type="button" value="+" class="btn"></td>
+				<td><input type="button" value="NONE" class="btn"></td>
+				<td><input type="button" value="NONE" class="btn"></td>
+			</tr>
+		</table>
+	</body>
+</html>

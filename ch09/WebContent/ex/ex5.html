@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			body{width: 100vw; height: 100vh;}
+		</style>
+		<script>
+			
+			function color_random(){
+				let r = Math.floor(Math.random()*255)+1;
+				let g = Math.floor(Math.random()*255)+1;
+				let b = Math.floor(Math.random()*255)+1;
+
+				document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+				document.getElementById('p').style.backgroundColor = "rgb("+g+","+b+","+r+")";
+			}
+		</script>
+	</head>
+	<body ondblclick="color_random()">
+		<h3>더블클릭시 배경색 랜덤</h3>
+		<hr>
+		<p id="p">
+			화면 아무 곳이나 더블클릭하면 배경색이 랜덤하게 변합니다.
+		</p>
+	</body>
+</html>

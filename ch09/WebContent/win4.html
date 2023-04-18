@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			#span{
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>텍스트가 자동으로 회전합니다.</h3>
+		<hr>
+		<div>
+			<span id="span">오늘은&nbsp;화요일입니다.&nbsp;맛있는&nbsp;점심을&nbsp;먹습니다.</span>
+		</div>
+
+		<script>
+			let span = document.getElementById('span');
+			let timerID = setInterval('doRotate()', 500);
+			
+			function doRotate(){
+				let str = span.innerText;
+
+				let first = str[0];
+				str = str.slice(1, str.length);
+				str += first;
+
+
+				span.innerText = str;
+
+			}
+
+			span.onclick = function(){
+				clearInterval(timerID);	// 중
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			
+			function date_time(){
+				let now = new Date();
+
+				let text = now.getFullYear()+"."+(now.getMonth()+1).toString().padStart(2, 0)+"."+now.getDate().toString().padStart(2, 0)+". ";
+				
+				if(now.getHours() > 12){
+					text += "오후 "+(now.getHours()-12);
+				}else{
+					text += "오후 "+now.getHours();
+				}
+
+				text += ":"+now.getMinutes()+":"+now.getSeconds().toString().padStart(2, 0);
+
+				document.getElementById('date').innerHTML = text;
+			}
+		
+		</script>
+	</head>
+	<body onload="setInterval('date_time()', 1000)">
+		<h3>날짜 및 시간</h3>
+		<hr>
+		<h1 id="date" style="text-align: center;"></h1>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let img;
+			let w = 200;
+			let h = 200;
+
+			function wheel(e){
+				img = document.getElementById('img');
+				if(e.wheelDelta > 0){
+					if(w != 0 && h != 0){
+						img.width = w--;
+						img.height = h--;
+					}
+				}
+				else{
+					img.width = w++;
+					img.height = h++;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+		<hr>
+		<p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+		<img src="./img/choon1.png" width="200" height="200" id="img" onwheel="wheel(event)">
+	</body>
+</html>
