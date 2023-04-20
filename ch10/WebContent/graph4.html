@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	rect(x,y,w,h) - 사각형 경로에 x,y,w,h 적용
+	strokeRect(x,y,w,h) - 캔버스에 직접 그린다.
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<canvas id="myCanvas"
+				width="500"
+				height="500"
+				style="background: aliceblue;">
+		</canvas>
+		<script>
+			let canvas = document.getElementById('myCanvas');
+			let context = canvas.getContext('2d');
+
+			context.beginPath();
+			context.strokeStyle="red";
+			for(i=0; i<10; i++){
+				context.rect(10+i*40, 10+i*10, 50, 50);
+			}
+			context.stroke();
+
+			// 외곽선이 있는 사각형
+			context.lineWidth = 10;
+			context.strokeStyle="green";
+			context.strokeRect(50, 250, 100,100);
+
+			// 채워진 사각형을 직접 그린 사각형
+			context.fillStyle="pink";
+			context.lineWidth = '20';
+			context.fillRect(200, 250, 150, 150);
+		</script>
+	</body>
+</html>

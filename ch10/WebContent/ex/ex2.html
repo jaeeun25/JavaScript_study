@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h3>다각형 만들기</h3>
+		<hr>
+		<canvas id="c"
+				width="500"
+				height="500"
+				style="background-color: aliceblue;">
+		</canvas>
+		<script>
+			let canvas = document.getElementById("c");
+			let context = canvas.getContext('2d');
+
+			context.fillStyle="yellow";
+
+			context.beginPath();
+			context.moveTo(30, 200);
+			context.lineTo(250,300);
+			context.lineTo(300,100);
+			context.lineTo(140,40);
+			context.closePath();
+
+			context.stroke();
+			context.fill();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			form{
+				width: 500px;
+			}
+			form::after{
+				display: block;
+				content: "";
+				clear: both;
+			}
+			div{
+				width: 240px;
+				text-align: right;
+			}
+			div:nth-child(even){
+				float: right;
+			}
+			div:nth-child(odd){
+				float: left;
+			}
+			button{
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>폼으로 사각형 그리기</h3>
+		<hr>
+		<form>
+			<div>x <input type="text" value=""></div>
+			<div>y <input type="text" value=""></div>
+			<div>width <input type="text" value=""></div>
+			<div>height <input type="text" value=""></div>
+			<div>선굵기 <input type="text" value=""></div>
+			<div>선색 <input type="color" value=""></div>
+			<div><button type="button" onclick="drawRect()">그리기</button></div>
+			<div><button type="button" onclick="remove()">지우기</button></div>
+		</form>
+		<canvas id="c"
+				width="1000"
+				height="1000"
+				style="background-color: aliceblue; margin: 10px; border: 1px solid black;">
+		</canvas>
+		<script>
+			let canvas, context;
+			function drawRect(){
+				canvas = document.getElementById("c");
+				context = canvas.getContext('2d');
+				let v = document.getElementsByTagName('input');
+
+				context.beginPath();
+				context.lineWidth = v[4].value;
+				context.strokeStyle = v[5].value;
+				context.fillStyle = "pink"
+				context.rect(v[0].value, v[1].value, v[2].value, v[3].value);
+				context.stroke();
+				context.fill();
+
+				for(i=0; i<v.length; i++){
+					v[i].value = "";
+				}
+			}
+
+			function remove(){
+				canvas = document.getElementById("c");
+				context = canvas.getContext('2d');
+
+				context.fillStyle = "aliceblue"
+
+				context.beginPath();
+				context.rect(0, 0, canvas.width, canvas.height);
+				context.fill();
+			}
+			
+
+
+			
+		</script>
+	</body>
+</html>

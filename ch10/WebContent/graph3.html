@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+		. arc(x1, y1, 시작각, 마지막각(회전각), 시계방향)
+			* 360도 = 2π
+
+				1.5π
+			1π		  2π(0π) + true(시계방향)
+				0.5π
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<canvas id="myCanvas"
+				width="500"
+				height="500"
+				style="background: lightgray; border: 10px solid blue;
+						border-radius: 20px;">
+		</canvas>
+		<script>
+			let canvas = document.getElementById('myCanvas');
+			let context = canvas.getContext('2d');
+
+			context.beginPath();
+			context.strokeStyle = 'red';
+			context.arc(100, 70, 50, Math.PI/2, false);
+			context.stroke();
+
+			context.beginPath();
+			context.strokeStyle = 'red';
+			context.arc(100, 70, 30, Math.PI/2, true);
+			context.stroke();
+
+			context.beginPath();
+			for(i=0; i<10; i++){
+				context.arc(200+(i*4), 80, 25, 0, 2*Math.PI, false);
+			}
+			context.strokeStyle = "green";
+			context.stroke();
+
+			context.beginPath();
+			for(i=0; i<10; i++){
+				context.arc(200+(i*4), 180+(i*6), 25, 0, 2*Math.PI, false);
+			}
+			context.strokeStyle = "orange";
+			context.stroke();
+
+		</script>
+	</body>
+</html>

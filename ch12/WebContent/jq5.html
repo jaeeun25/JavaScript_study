@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- 
+	$('선택요소').html('새요소')				: 선택한 요소의 하위요소들을 변경
+	$('선택요소').text('새텍스트')				: 선택한 요소의 텍스트 생성
+	$('선택요소').text()					: 선택한 요소의 텍스트 가져오기
+	$('선택요소').text(function(index, t))	: 해당 인덱스 문자를 t로 변경
+	
+	$('선택요소').append('새요소')			: 선택요소의 마지막 자식으로
+	$('선택요소').prepend('새요소')			: 선택요소의 첫번째 자식으로
+	$('새요소').insertBefor('기준요소')
+	$('새요소').insertAfter('기준요소')
+	$('선택요소').clone(true/false)			: 선택 요소를 복제(true:하위요소포함)
+	$('선택요소').remove()
+
+	$('선택요소').attr('속성')				: 속성값 읽기
+	$('선택요소').attr('속성', '값')			: 속성 지정
+	$('선택요소').addClass("클래스명")
+	$('선택요소').removeClass('클래스명')
+	$('선택요소').toggleClass('클래스명')
+	$('선택요소').hasClass('클래스명')			: 해당 클래스이면 true 반환
+	$('선택요소').wrap('<div></div>')		: 선택요소를 div로 감싼다.
+	$('선택요소').wrapAll('<div></div>')	: 선택요소를 전체를 div로 감싼다.
+
+	// 배열 관련
+	$.each(배열객체, function(index, value){})
+	$.map(배열객체, function(value, index){})
+ -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+		<script>
+			$(()=>{
+				// theTitle클래스 요소를 <a href=''>HTML조작</a>
+				$(".theTitle").html("<h2><a href=''>HTML조작</a></h2>");
+				
+				// obj1클래스의 텍스트를 'list_1'을 'list4'로 변경
+				$(".obj1").text(function(index, text){
+					return 'list4';	
+				});
+
+				// list3 아이디 요소의 마지막요소로 <li>새로 추가한 요소_끝</li>추가
+				$("#list3").append("<li>새로 추가한 요소_끝</li>");
+
+				// list3 아이디 요소의 맨 앞으로 <li>새로 추가한 요소_앞</li>추가
+				$("#list3").prepend("<li>새로 추가한 요소_앞</li>");
+
+				// <li>insertBefore로 추가한 새로운 요소</li>를 list3 아이디의 자손 li중 5번째(eq(4)) 앞에 추가
+				$("<li>insertBefore로 추가한 새로운 요소</li>").insertBefore("#list3 li:eq(4)");
+				
+				// <li>insertAfter로 새로운 요소</li> list3아이디의 6번째 뒤에 추가
+				$("<li>insertBefore로 새로운 요소</li>").insertAfter("#list3 li:eq(5)");
+
+				// list3 아이디의 자손 li중에 첫번째 요소의 class속성 읽어와서 alert()로 출력해보기
+				alert($('#list3 li:first-child').attr('class'));
+
+				// list3 아이디의 자손 li중에 첫번째 요소의 class를 obj_new로 변경
+				$("#list3 li:first-child").attr('class', 'obj_new');
+
+				// obj_new클래스를 가진 요소의 배경색을 skyblue, border를 3px solid #f0f, 글자색 blue로 변경
+				$(".obj_new").css({"background-color":"skyblue", "border":"3px solid #f0f", "color":"blue"});
+
+				// list3 아이디의 자손 li중에 첫번째 요소에 obj3이라고 클래스 부여
+				$("#list3 li:first-child").addClass('obj3');
+
+				// obj3클래스 요소의 글자색을 red로
+				$(".obj3").css('color', "#f00");
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<h2 class="theTitle">HTML 조작</h2>
+			<ul id="list3">
+				<li class="obj1">list1</li>
+				<li>list2</li>
+				<li>list3</li>
+			</ul>
+		</div>
+	</body>
+</html>

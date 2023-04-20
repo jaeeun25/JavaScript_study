@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- 
+	캔버스(Canvas)
+		. 자바스크립트 코드로 웹 페이지에 자유롭게 그래픽을 수행할 수 있도록 해주는 DOM이다.
+		. 브라우저 화면에 공간을 캔버스에 할당하고 그래픽 기능을 이용해서 그린다.
+		. 캔버스의 그래픽은 자바스크립트 코드로만 가능하다.
+		. 도형, 글자, 이미지(변환), 실시그래프, 애니메이션, 대화형게임, 지도 등을 플러그인 없이 만들 때 사용된다.
+		
+		. 웹표준이다.
+		. 벡터방식(svg)이 아니라 비트맵 렌더링 방식으로 브라우저에 직접 그리므로 매우 빠르다.
+		. 2차원('2d'), 3차원('webgl')도 지원한다.
+
+	canvas태그 활용
+		. id, style, width, height 속성을 적용한다.
+		. getContext() : context객체반환
+
+	context객체 : 그리기 도구를 가짐
+		- beginPath()	: 이전 경로를 모두 지우고 새로 시작
+		- strokeStyle	: 선 색상
+		- fillStyle		: 면 색상
+		- lineWidth		: 선의 두께
+		- font			: 텍스트 폰트
+		- textAlign		: 텍스트 정렬
+
+		1) 경로 만들기
+			- beginPath()	: 이전 경로를 모두 지우고 새로 시작
+			- moveTo()		: 경로의 새로운 점
+			- lineTo()		: 연결하는 선을 추가한다.
+			- rect()		: 경로에 사각형을 추가한다.
+			- arc()			: 경로에 원(원호)를 추가한다.
+
+			- stroke()		: 경로에 담겨있는 모든 도형의 선을 그린다.
+			- fill()		: 경로에 담겨있는 모든 도형의 면을 그린다.
+
+		2) 직접 도형그리기
+			- strokeText	: 문자열 그리기
+			- fillText		: 문자열 채워 그리기
+
+			- strokeRect()	: 사각형 그리기
+			- strokeArc()	: 원 그리기
+			- fillRect()	: 사각형 채워 그리기
+			- fillArc()		: 원 채워 그리기
+			
+			- drawImage()	: 이미지를 그린다.
+			- clearRect()	: 사각형을 지운다.
+			등등..
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			#canvas1{
+				margin: 0;
+				width: 150px;
+				height: 150px;
+				background-color: #ff8c64;
+			}
+			#canvas2{
+				margin: 0;
+				width: 150px;
+				height: 150px;
+				background-color: #ff665a;
+			}
+			div{
+				width: 306px;
+				height: 150px;
+				background-color: #7d6b7d;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>3개의 캔버스 만들기</h3>
+		<canvas id="canvas1">이 태그는 지원하지 않는 브라우저일 때 출력합니다.</canvas>
+		<canvas id="canvas2">이 태그는 지원하지 않는 브라우저일 때 출력합니다.</canvas>
+		<canvas id="canvas3" width="306px" height="150px"
+				style="background-color: #7d6b7d;">이 태그는 지원하지 않는 브라우저일 때 출력합니다.</canvas>
+		<hr>
+		<div>
+			div로 만든 박스
+		</div>
+	</body>
+</html>

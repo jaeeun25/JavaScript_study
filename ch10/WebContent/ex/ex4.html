@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h3>사진과 이름 출력</h3>
+		<hr>
+		<h2 style="color:cornflowerblue">♥춘식이랑 여름여행♥</h2>
+		<canvas id="c"
+				width="400"
+				height="600"
+				style="background-color: aliceblue;">
+		</canvas>
+		<script>
+			let canvas = document.getElementById("c");
+			let context = canvas.getContext('2d');
+
+			let img = new Image();
+			img.onload = function(){
+				context.drawImage(img, 0, 0, canvas.width, canvas.height);
+			}
+			img.src="./img/choon_sea.jpeg";
+			
+		</script>
+	</body>
+</html>
