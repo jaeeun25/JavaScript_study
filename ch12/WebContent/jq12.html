@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+		<style>
+			#box2{
+				position: absolute;
+				width: 100px;
+				height: 100px;	
+				left: 10px;
+				top: 60px;
+			}
+			button{
+				width: 50px;
+				height: 30px;	
+				background-color: blue;
+			}
+		</style>
+		<script>
+			$(()=>{
+				var l = 10;
+				var t = 60;
+				var lw = 50;
+				var rw = 50;
+				var bh = 30;
+				var th = 30;
+				$('#left').mousedown(function(){
+					$('#box2').animate({
+						left: (l--)+"px"
+					},100);
+					$('#left').animate({
+						width: (lw++)+"px"
+					},100);
+				});
+				$('#right').mousedown(function(){
+					$('#box2').animate({
+						left: (l++)+"px"
+					},100);
+					$('#right').animate({
+						width: (rw++)+"px"
+					},100);
+				});
+				$('#bottom').mousedown(function(){
+					$('#box2').animate({
+						top: (t++)+"px"
+					},100);
+					$('#bottom').animate({
+						height: (bh++)+"px"
+					},100);
+				});
+				$('#top').mousedown(function(){
+					$('#box2').animate({
+						top: (t--)+"px"
+					},100);
+					$('#top').animate({
+						height: (th++)+"px"
+					},100);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			<button id="left" type="button">◀</button>
+			<button id="right" type="button">▶</button>
+			<button id="bottom" type="button">▼</button>
+			<button id="top" type="button">▲</button>
+		</p>
+		<div id="box2" style="text-align: center; color: white; box-shadow: 2px 2px 5px blue; background-color: red;">박스2</div>
+	</body>
+</html>
