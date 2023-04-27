@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 
+	부트스트랩에서 글자크기
+		. h1~h6 36px~12px
+		. 줄간격(line-height): 1.428
+		. p요소의 하단여백: 10px
+
+	display-1~4
+	small
+	text-left, text-center, text-right
+
+	* google지원 - Naum Brush Script, Nanum Gothic, NanumMyengjo, Nanum Pen Script, Hanna (5종)
+		http://fonts.googleapis.com/earlyaccess/nanumgothic.css
+ -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=diveice-width, initial-scale=1">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/custom.css">
+		
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/jquery-3.6.4.js"></script>
+
+		<style>
+			@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+			.display-3{
+				font-family: "Nanum Gothic";
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>h1 Bootstrap heading(36px)
+				<small>lighter, smaller text</small>
+				<span class="small text-muted">smaller</span>
+			</h1>
+			<h2>h2 Bootstrap headgin(30px)
+				<small>lighter, smaller text</small>
+				<span class="small text-muted">smaller</span>
+			</h2>
+			<h3>h3 Bootstrap headgin(24px)
+				<small>lighter, smaller text</small>
+				<span class="small text-muted">smaller</span>
+			</h3>
+			<h4>h4 Bootstrap headgin(18px)
+				<small>lighter, smaller text</small>
+				<span class="small text-muted">smaller</span>
+			</h4>
+			<h5>h5 Bootstrap headgin(14px)
+				<small>lighter, smaller text</small>
+				<span class="small text-muted">smaller</span>
+			</h5>
+			<h6>h6 Bootstrap headgin(12px)
+				<small>lighter, smaller text</small>
+				<span class="small text-muted">smaller</span>
+			</h6>
+		</div>
+
+		<hr>
+		<div class="container mt-5">
+			<h1 class="display-1">display-1</h1>
+			<h1 class="display-2">display-2</h1>
+			<h1 class="display-3">display-3</h1>
+			<h1 class="display-4">display-4</h1>
+
+			<h1 class="display-3">한글을 설정해 봅니다.</h1>
+		</div>
+
+		<div class="continer mt-5">
+			<h3 class="text-left">글자를 정렬합니다.</h3>
+			<h3 class="text-center">글자를 정렬합니다.</h3>
+			<h3 class="text-right">글자를 정렬합니다.</h3>
+		</div>
+
+		<div class="container mt-5">
+			<h3>현재 부트스트랩을 학습하고 있습니다. html+css+javascript+컴포넌트</h3>
+			<blockquote class="text-center">인용구를 정렬해볼까요</blockquote>
+			<address class="text-right">서울시 마포구 신수동</address>
+			<p class="address">서울시 마포구 신수동</p>
+		</div>
+	</body>
+</html>

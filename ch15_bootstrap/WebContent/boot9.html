@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=diveice-width, initial-scale=1">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<style>
+			*{text-align: center;}
+			.w_box, .h_box{
+				border: 1px solid #ccc;
+				min-width: 700px;
+			}
+			.w_box>div{
+				background: lightpink;
+				height: 50px;
+				width: 100%;
+			}
+			.w_box p{
+				font-size: 15px;
+				text-align: left;
+			}
+			.h_box{
+				height: 300px;
+			}
+			.h_box>div{
+				width: 19%;
+				min-width: 135px;
+				display: inline-block;
+				background: lightsteelblue;
+				height: 100%;
+			}
+			.h_box p{
+				font-size: 15px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>부트스트랩 기본 너비</h3>
+		<div class="w_box p-1">
+			<div class="w-25 mb-1 p-2"><p>width 25%</p></div>
+			<div class="w-50 mb-1 p-2"><p>width 50%</p></div>
+			<div class="w-75 mb-1 p-2"><p>width 75%</p></div>
+			<div class="w-100 mb-1 p-2"><p>width 100%</p></div>
+			<div class="mw-100 p-2"><p>max-width 100%</p></div>
+		</div>
+
+		<hr>
+
+		<h3>부트스트랩 기본 높이</h3>
+		<div class="h_box pt-1">
+			<div class="h-25 p-2"><p>height 25%</p></div>
+			<div class="h-50 p-2"><p>height 50%</p></div>
+			<div class="h-75 p-2"><p>height 75%</p></div>
+			<div class="h-100 p-2"><p>height 100%</p></div>
+			<div class="mh-100 p-2"><p>max-height 100%</p></div>
+		</div>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/jquery-3.6.4.js"></script>
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=diveice-width, initial-scale=1">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/jquery-3.6.4.js"></script>
+
+		<style>
+			.form-control:focus{
+				border-color: #66afe9;
+				outline: 0;
+				box-shadow: inset 0 1px 1px rgba(0,0,0,.75),
+								  0 0 8px rgba(0,0,233,1)
+
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="container mt-5">
+			<div>
+				<h3>기본</h3>
+				<form role="form">
+					<div class="form-group">
+						<label for="name">이름</label>
+						<input type="text" class="form-control" placeholder="이름">
+					</div>
+					<div class="form-group">
+						<label for="email">이메일</label>
+						<input type="email" class="form-control" placeholder="이메일">
+					</div>
+				</form>
+			</div>
+
+			<br><hr><br>
+
+			<div class="border mt-1 p-3">
+				<h3>form-horizontal 및 col등 클래스 선택자 적용</h3>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<div class="row">
+							<label for="name" class="col-xs-2 col-lg-2 control-label">이름</label>
+							<div class="col-xs-10 col-lg-10">
+								<input type="text" class="form-control" placeholder="이름">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="email" class="col-xs-2 col-lg-2 control-label">이메일</label>
+							<div class="col-xs-10 col-lg-10">
+								<input type="email" class="form-control" placeholder="이메일">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="password" class="col-xs-2 col-lg-2 control-label">비밀번호</label>
+							<div class="col-xs-10 col-lg-10">
+								<input type="password" class="form-control" placeholder="비밀번호">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="memo" class="col-xs-2 col-lg-2 control-label">메모</label>
+							<div class="col-xs-10 col-lg-10">
+								<textarea row="10" class="form-control"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="fruits" class="col-xs-2 col-lg-2 control-label">과일</label>
+							<div class="col-xs-10 col-lg-10">
+								<input type="checkbox">사과
+								<input type="checkbox">귤
+								<input type="checkbox">체리
+								<input type="checkbox">수박
+								<input type="checkbox">레몬
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<label for="grade" class="col-xs-2 col-lg-2 control-label">학년</label>
+							<div class="col-xs-10 col-lg-10">
+								<input type="radio">1학년
+								<input type="radio">2학년
+								<input type="radio">3학년
+								<input type="radio">4학년
+							</div>
+						</div>
+					</div>
+
+					<button type="button">확인</button>
+				</form>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<img src="./img/choon1.png" class="img-thumbnail" width="200" height="200">
+				</div>
+				<div class="col-md-4">
+
+				</div>
+				<div class="col-md-4">
+
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<table class="table table-bordered table-hover table-striped">
+					<tr><th>번호</th><th>제목</th><th>글쓴이</th></tr>
+					<tr><th>1</th><th>테이블테이블테이블</th><th>공듀</th></tr>
+					<tr><th>2</th><th>테이블테이블테이블</th><th>공듀</th></tr>
+					<tr><th>3</th><th>테이블테이블테이블</th><th>공듀</th></tr>
+					<tr><th>4</th><th>테이블테이블테이블</th><th>공듀</th></tr>
+					
+
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
